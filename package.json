@@ -9,7 +9,8 @@
     "preview": "rspeedy preview"
   },
   "dependencies": {
-    "@lynx-js/react": "^0.106.2"
+    "@lynx-js/react": "^0.106.2",
+    "react-router": "6"
   },
   "devDependencies": {
     "@lynx-js/qrcode-rsbuild-plugin": "^0.3.4",

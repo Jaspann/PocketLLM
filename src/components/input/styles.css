@@ -1,0 +1,58 @@
+.bottomMenu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.inputBox {
+  width: 85%;
+  background: #eee;
+  padding: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.tempInput {
+  color: #000;
+  flex: 1;
+}
+
+.sendMessage {
+  background: lightskyblue;
+  width: 40px;
+  aspect-ratio: 1/1;
+  border-radius: 30px;
+  margin-left: 8px;
+  margin-top: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.sendArrow {
+  height: 30px;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.serviceScroll {
+  display: flex;
+  flex-direction: row;
+  /* border: #000; */
+  /* border-width: 1px; */
+  margin: 10px auto;
+  width: calc(100% - 40px);
+  flex: 1;
+}

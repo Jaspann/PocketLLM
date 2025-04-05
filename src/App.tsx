@@ -1,44 +1,49 @@
-import { useCallback, useEffect, useState } from '@lynx-js/react'
+import { root, useCallback, useEffect, useState } from '@lynx-js/react'
+import { MemoryRouter, Routes, Route, Outlet } from 'react-router';
 
 import './App.css'
-import arrow from './assets/arrow.png'
-import lynxLogo from './assets/lynx-logo.png'
-import reactLynxLogo from './assets/react-logo.png'
+
+import {TopBar} from './components/top-bar/index.jsx'
+import {Input} from './components/input/index.jsx'
+import { Settings } from './components/settings/index.jsx'
 
 export function App() {
-  const [alterLogo, setAlterLogo] = useState(false)
+  const [inputValue, setInputValue] = useState('');
 
-  useEffect(() => {
-    console.info('Hello, ReactLynx')
-  }, [])
+  const handleInputChange = (event: any) => {
+      setInputValue(event.target.value);
+  }
 
-  const onTap = useCallback(() => {
-    'background only'
-    setAlterLogo(!alterLogo)
-  }, [alterLogo])
+  if (import.meta.webpackHot) {
+    import.meta.webpackHot.accept();
+  }
 
+  
   return (
     <view>
       <view className='Background' />
       <view className='App'>
-        <view className='Banner'>
-          <view className='Logo' bindtap={onTap}>
-            {alterLogo
-              ? <image src={reactLynxLogo} className='Logo--react' />
-              : <image src={lynxLogo} className='Logo--lynx' />}
-          </view>
-          <text className='Title'>React</text>
-          <text className='Subtitle'>on Lynx</text>
-        </view>
-        <view className='Content'>
-          <image src={arrow} className='Arrow' />
-          <text className='Description'>Tap the logo and have fun!</text>
-          <text className='Hint'>
-            Edit<text style={{ fontStyle: 'italic' }}>{' src/App.tsx '}</text>
-            to see updates!
-          </text>
-        </view>
-        <view style={{ flex: 1 }}></view>
+        <TopBar />
+        <Routes>
+          <Route path="/" element={
+            <view>
+              <view className='Banner'>
+                <text className='Title'>React</text>
+                <text className='Subtitle'>on Lynx</text>
+                
+            <input 
+                type="text" 
+                value={inputValue} 
+                onInput={handleInputChange} 
+                placeholder="Enter something..." 
+                className="input-box"
+            />
+              </view>
+            </view>
+          } />
+          <Route path="/settings" element={<Settings />} />
+        </Routes>
+        <Input />
       </view>
     </view>
   )
