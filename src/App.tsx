@@ -20,18 +20,19 @@ export function App() {
 
     setMessages((prevMessages) => [...prevMessages, newMessage]);
   };
+
+  const home = 
+    <view className='chat-container'>
+      <Chat messages={messages} />
+      <Input onSendMessage={handleSendMessage} />
+    </view>
   
   return (
     <view>
       <view className='App'>
         <TopBar />
         <Routes>
-          <Route path="/" element={
-            <view className='chat-container'>
-              <Chat messages={messages} />
-              <Input onSendMessage={handleSendMessage} />
-            </view>
-          } />
+          <Route path="/" element={ home } />
           <Route path="/settings" element={<Settings />} />
         </Routes>
       </view>
