@@ -1,18 +1,46 @@
+import { useCallback, useState } from '@lynx-js/react'
 import { ServiceSelector } from './service-selector/index.jsx'
 import UpArrowImage from '../../assets/upArrow.png'
 
 import "./styles.css"
 
-export function Input() {
+interface TextInputBarProps {
+  onSendMessage: (message: string) => void;
+}
+
+export function Input({ onSendMessage }: TextInputBarProps) {
+
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (e: any) => {
+    const currentValue = e.detail.value.trim();
+    setInputValue(currentValue);
+  };
+
+  const handleSend = useCallback(() => {
+    'background only'
+    if (inputValue.trim()) {
+      onSendMessage(inputValue);
+      setInputValue('');
+    }
+  }, [inputValue])
+
   return (
     <view>
       <view className='bottomMenu'>
         <view className='inputRow'>
           <view className='inputBox'>
-            <text className='tempInput'>Ask a question...</text>
+            <input 
+                // @ts-ignore
+                bindinput={handleInputChange} 
+                type="text" 
+                value={inputValue} 
+                placeholder="Ask a question..." 
+                className="inputComponent"
+            />
           </view>
           <view className='sendMessage' >
-            <image src={UpArrowImage} className='sendArrow'></image>
+            <image src={UpArrowImage} className='sendArrow' bindtap={handleSend}></image>
           </view>
         </view>
         

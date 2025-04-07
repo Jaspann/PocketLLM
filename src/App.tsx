@@ -6,44 +6,34 @@ import './App.css'
 import {TopBar} from './components/top-bar/index.jsx'
 import {Input} from './components/input/index.jsx'
 import { Settings } from './components/settings/index.jsx'
+import { Chat } from './components/chat/index.jsx'
 
 export function App() {
-  const [inputValue, setInputValue] = useState('');
+  const [messages, setMessages] = useState<Message[]>([]);
 
-  const handleInputChange = (event: any) => {
-      setInputValue(event.target.value);
-  }
+  const handleSendMessage = (text: string) => {
+    const newMessage: Message = {
+      id: Date.now().toString(),
+      text,
+      sender: "user"
+    };
 
-  if (import.meta.webpackHot) {
-    import.meta.webpackHot.accept();
-  }
-
+    setMessages((prevMessages) => [...prevMessages, newMessage]);
+  };
   
   return (
     <view>
-      <view className='Background' />
       <view className='App'>
         <TopBar />
         <Routes>
           <Route path="/" element={
-            <view>
-              <view className='Banner'>
-                <text className='Title'>React</text>
-                <text className='Subtitle'>on Lynx</text>
-                
-            <input 
-                type="text" 
-                value={inputValue} 
-                onInput={handleInputChange} 
-                placeholder="Enter something..." 
-                className="input-box"
-            />
-              </view>
+            <view className='chat-container'>
+              <Chat messages={messages} />
+              <Input onSendMessage={handleSendMessage} />
             </view>
           } />
           <Route path="/settings" element={<Settings />} />
         </Routes>
-        <Input />
       </view>
     </view>
   )

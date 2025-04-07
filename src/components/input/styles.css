@@ -23,13 +23,15 @@
   border-radius: 10px;
 }
 
-.tempInput {
-  color: #000;
-  flex: 1;
+.inputComponent {
+  color: #ff6448;
+  --color-text: #000;
+  width: 100%;
+  height: 100%;
 }
 
 .sendMessage {
-  background: lightskyblue;
+  background: #08e6ff;
   width: 40px;
   aspect-ratio: 1/1;
   border-radius: 30px;
@@ -50,9 +52,7 @@
 .serviceScroll {
   display: flex;
   flex-direction: row;
-  /* border: #000; */
-  /* border-width: 1px; */
   margin: 10px auto;
-  width: calc(100% - 40px);
+  width: 100%;
   flex: 1;
 }

@@ -5,25 +5,19 @@ import DeepSeekLogo from '../../../assets/deepseek.png'
 
 import "./styles.css"
 
+type ServiceType = 'OpenAI' | 'Gemini' | 'Claude' | 'DeepSeek';
+
+const LOGO_MAP = {
+  OpenAI: OpenAILogo,
+  Gemini: AnthropicLogo,
+  Claude: GeminiLogo,
+  DeepSeek: DeepSeekLogo,
+};
+
 export function ServiceSelector({ service }: { service: string }) {
 
-  let icon;
-  if (service == "OpenAI")
-  {
-    icon = <image className='serviceLogo' src={OpenAILogo} />
-  }
-  else if (service == "Gemini")
-  {
-    icon = <image className='serviceLogo' src={AnthropicLogo} />
-  }
-  else if (service == "Claude")
-  {
-    icon = <image className='serviceLogo' src={GeminiLogo} />
-  }
-  else
-  {
-    icon = <image className='serviceLogo' src={DeepSeekLogo} />
-  }
+  const logoSource = LOGO_MAP[service as ServiceType] || LOGO_MAP.DeepSeek;
+  const icon = <image className='serviceLogo' src={logoSource} />
 
   return (
     <view>

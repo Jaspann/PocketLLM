@@ -25,7 +25,7 @@ export function TopBar() {
         <view bindtap={onTapMenu}>
           <image src={menuIcon} className='menuIcon'/>
         </view>
-        <text className='chatTitle'>New Chat</text>
+        <text className='chatTitle'>Pocket LLM</text>
         <view bindtap={onTapSettings}>
           <image src={settingsIcon} className='settingsIcon'/>
         </view>
