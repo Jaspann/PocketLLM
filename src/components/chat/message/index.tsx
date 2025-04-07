@@ -5,19 +5,19 @@ import DeepSeekLogo from '../../../assets/deepseek.png'
 
 import "./styles.css"
 
-type ServiceType = 'OpenAI' | 'Gemini' | 'Claude' | 'DeepSeek';
+type ServiceType = 'OpenAI' | 'Claude'  | 'Gemini'| 'DeepSeek';
 
 const LOGO_MAP = {
   OpenAI: OpenAILogo,
-  Gemini: GeminiLogo,
   Claude: AnthropicLogo,
+  Gemini: GeminiLogo,
   DeepSeek: DeepSeekLogo,
 };
 
 export function Message({ service, role, message }: { service: string; role: string; message: string }) {
 
   const logoSource = LOGO_MAP[service as ServiceType] || LOGO_MAP.DeepSeek;
-  const icon = <image className='serviceLogo message' src={logoSource} />
+  const icon = <image className='serviceLogoMessage' src={logoSource} />
 
   const isUser = role == "user";
 

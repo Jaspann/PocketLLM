@@ -2,11 +2,18 @@
 
 An LLM wrapper for popular services using [ByteDance's Lynx](https://lynxjs.org/) mobile app framework.
 
+![More then one model can be used in a single chat](./src/assets/model-switching.png)
+![Can scroll though long amounts of text](./src/assets/text-scroll.png)
+
 ## Planned Features
 
+- [ ] Branching Discussion Functionality:
+  - [ ] Editing
+  - [ ] Re-prompting
+- [ ] Streaming Text
 - [ ] Ollama support
 - [ ] Save user data (needs to be done through [Native Modules](https://lynxjs.org/guide/use-native-modules.html))
-  - [ ] chats 
+  - [ ] Chats 
   - [ ] API Keys
 - [ ] Dark mode
 

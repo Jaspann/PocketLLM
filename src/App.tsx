@@ -7,14 +7,16 @@ import {Input} from './components/input/index.jsx'
 import { Settings } from './components/settings/index.jsx'
 import { Chat } from './components/chat/index.jsx'
 
+import sendRequest from './utils.js'
+
 export function App() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [showSettings, setShowSettings] = useState(false);
   const [apiKeys, setApiKeys] = useState({
-    openAi: ' ',
-    anthropic: ' ',
-    gemini: ' ',
-    deepSeek: ' '
+    openAi: '',
+    anthropic: '',
+    gemini: '',
+    deepSeek: ''
   });
 
   const handleUpdateApiKeys = useCallback((keys: {
@@ -35,7 +37,20 @@ export function App() {
       content: message
     };
 
-    setMessages((prevMessages) => [...prevMessages, newMessage]);
+    const updatedMessages = [...messages, newMessage];
+    
+    setMessages(updatedMessages);
+
+    const response = await sendRequest(updatedMessages, service, apiKeys)
+
+    const responseMessage: Message = {
+      id: Date.now().toString(),
+      service: service,
+      role:"assistant",
+      content: response
+    };
+
+    setMessages((prevMessages) => [...prevMessages, responseMessage]);
   };
 
   const home = 

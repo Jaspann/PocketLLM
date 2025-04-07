@@ -59,13 +59,13 @@ export function Input({ onSendMessage }: TextInputBarProps) {
             onSelect={handleServiceSelect}
           />
           <ServiceSelector 
-            service="Gemini" 
-            isSelected={selectedService === "Gemini"}
+            service="Claude" 
+            isSelected={selectedService === "Claude"}
             onSelect={handleServiceSelect}
           />
           <ServiceSelector 
-            service="Claude" 
-            isSelected={selectedService === "Claude"}
+            service="Gemini" 
+            isSelected={selectedService === "Gemini"}
             onSelect={handleServiceSelect}
           />
           <ServiceSelector 

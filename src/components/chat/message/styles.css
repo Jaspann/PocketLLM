@@ -22,8 +22,7 @@
   align-items: center;
 }
 
-.serviceLogo.message {
-  color: #000;
+.serviceLogoMessage {
   height: 30px;
   aspect-ratio: 1/1;
   margin: 3px;
