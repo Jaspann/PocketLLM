@@ -11,10 +11,10 @@ import { Chat } from './components/chat/index.jsx'
 export function App() {
   const [messages, setMessages] = useState<Message[]>([]);
 
-  const handleSendMessage = (text: string) => {
+  const handleSendMessage = (message: string, service: string) => {
     const newMessage: Message = {
       id: Date.now().toString(),
-      text,
+      text: message + ": " + service,
       sender: "user"
     };
 

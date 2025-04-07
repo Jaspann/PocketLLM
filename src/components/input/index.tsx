@@ -5,22 +5,27 @@ import UpArrowImage from '../../assets/upArrow.png'
 import "./styles.css"
 
 interface TextInputBarProps {
-  onSendMessage: (message: string) => void;
+  onSendMessage: (message: string, service: string) => void;
 }
 
 export function Input({ onSendMessage }: TextInputBarProps) {
 
   const [inputValue, setInputValue] = useState('');
+  const [selectedService, setSelectedService] = useState('OpenAI');
 
   const handleInputChange = (e: any) => {
     const currentValue = e.detail.value.trim();
     setInputValue(currentValue);
   };
 
+  const handleServiceSelect = (service: string) => {
+    setSelectedService(service);
+  };
+
   const handleSend = useCallback(() => {
     'background only'
     if (inputValue.trim()) {
-      onSendMessage(inputValue);
+      onSendMessage(inputValue, selectedService);
       setInputValue('');
     }
   }, [inputValue])
@@ -48,10 +53,26 @@ export function Input({ onSendMessage }: TextInputBarProps) {
           scroll-orientation="horizontal"
           className='serviceScroll'
         >
-          <ServiceSelector service={"OpenAI"} />
-          <ServiceSelector service={"Gemini"} />
-          <ServiceSelector service={"Claude"} />
-          <ServiceSelector service={"DeepSeek"} />
+          <ServiceSelector 
+            service="OpenAI" 
+            isSelected={selectedService === "OpenAI"}
+            onSelect={handleServiceSelect}
+          />
+          <ServiceSelector 
+            service="Gemini" 
+            isSelected={selectedService === "Gemini"}
+            onSelect={handleServiceSelect}
+          />
+          <ServiceSelector 
+            service="Claude" 
+            isSelected={selectedService === "Claude"}
+            onSelect={handleServiceSelect}
+          />
+          <ServiceSelector 
+            service="DeepSeek" 
+            isSelected={selectedService === "DeepSeek"}
+            onSelect={handleServiceSelect}
+          />
 
         </scroll-view>
 

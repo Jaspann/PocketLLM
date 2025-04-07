@@ -10,6 +10,12 @@
   align-items: center;
   margin-right: 5px;
   margin-left: 5px;
+  border: 2px solid #00000000;
+}
+
+.serviceBox.selected {
+  background-color: #b4d8ff;
+  border: 2px solid #4fa4ff;
 }
 
 .serviceLogo {

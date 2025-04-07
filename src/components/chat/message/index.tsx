@@ -9,8 +9,8 @@ type ServiceType = 'OpenAI' | 'Gemini' | 'Claude' | 'DeepSeek';
 
 const LOGO_MAP = {
   OpenAI: OpenAILogo,
-  Gemini: AnthropicLogo,
-  Claude: GeminiLogo,
+  Gemini: GeminiLogo,
+  Claude: AnthropicLogo,
   DeepSeek: DeepSeekLogo,
 };
 
