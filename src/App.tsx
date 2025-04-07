@@ -1,5 +1,4 @@
-import { root, useCallback, useEffect, useState } from '@lynx-js/react'
-import { MemoryRouter, Routes, Route, Outlet } from 'react-router';
+import { useCallback, useState } from '@lynx-js/react'
 
 import './App.css'
 
@@ -10,31 +9,54 @@ import { Chat } from './components/chat/index.jsx'
 
 export function App() {
   const [messages, setMessages] = useState<Message[]>([]);
+  const [showSettings, setShowSettings] = useState(false);
+  const [apiKeys, setApiKeys] = useState({
+    openAi: ' ',
+    anthropic: ' ',
+    gemini: ' ',
+    deepSeek: ' '
+  });
 
-  const handleSendMessage = (message: string, service: string) => {
+  const handleUpdateApiKeys = useCallback((keys: {
+    openAi: string,
+    anthropic: string,
+    gemini: string,
+    deepSeek: string
+  }) => {
+    setApiKeys(keys);
+    setShowSettings(false);
+  }, []);
+
+  const handleSendMessage = async (message: string, service: string) => {
     const newMessage: Message = {
       id: Date.now().toString(),
-      text: message + ": " + service,
-      sender: "user"
+      service: service,
+      role:"user",
+      content: message
     };
 
     setMessages((prevMessages) => [...prevMessages, newMessage]);
   };
 
   const home = 
-    <view className='chat-container'>
-      <Chat messages={messages} />
-      <Input onSendMessage={handleSendMessage} />
+    <view className='App'>
+      <TopBar onSettingsClick={() => setShowSettings(true)} />
+      <view className='chat-container'>
+        <Chat messages={messages} />
+        <Input onSendMessage={handleSendMessage} />
+      </view>
     </view>
-  
+
   return (
     <view>
-      <view className='App'>
-        <TopBar />
-        <Routes>
-          <Route path="/" element={ home } />
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
+      <view>
+        {showSettings ? (
+          <Settings 
+            apiKeys={apiKeys}
+            onUpdateApiKeys={handleUpdateApiKeys}
+            onBack={() => setShowSettings(false)}
+          />
+        ) : (home)}
       </view>
     </view>
   )

@@ -18,8 +18,9 @@ export function Chat({ messages }: ChatWindowProps) {
           {messages.map((message, index) => (
           <Message 
             key={index}
-            sender={message.sender}
-            message={message.text}
+            service={message.service}
+            role={message.role}
+            message={message.content}
           />
           ))}
       </scroll-view>

@@ -24,8 +24,6 @@
 }
 
 .inputComponent {
-  color: #ff6448;
-  --color-text: #000;
   width: 100%;
   height: 100%;
 }

@@ -1,32 +1,23 @@
-import { useCallback, useEffect, useState } from '@lynx-js/react'
 import menuIcon from "../../assets/menu.png";
 import settingsIcon from "../../assets/settings.png";
-import { useNavigate } from 'react-router';
 
 import "./styles.css"
 
-export function TopBar() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-  const nav = useNavigate();
+interface TopBarProps {
+  onSettingsClick: () => void;
+}
 
-  const onTapMenu = useCallback(() => {
-    'background only'
-    setSidebarOpen(!sidebarOpen)
-  }, [sidebarOpen])
-
-  const onTapSettings = useCallback(() => {
-    nav('/settings')
-  }, [sidebarOpen])
+export function TopBar( {onSettingsClick}: TopBarProps ) {
 
   return (
     <view>
       <view className='statusBar' />
       <view className='menu'>
-        <view bindtap={onTapMenu}>
+        <view>
           <image src={menuIcon} className='menuIcon'/>
         </view>
         <text className='chatTitle'>Pocket LLM</text>
-        <view bindtap={onTapSettings}>
+        <view bindtap={onSettingsClick}>
           <image src={settingsIcon} className='settingsIcon'/>
         </view>
       </view>

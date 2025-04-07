@@ -14,12 +14,12 @@ const LOGO_MAP = {
   DeepSeek: DeepSeekLogo,
 };
 
-export function Message({ sender, message }: { sender: string; message: string }) {
+export function Message({ service, role, message }: { service: string; role: string; message: string }) {
 
-  const logoSource = LOGO_MAP[sender as ServiceType] || LOGO_MAP.DeepSeek;
+  const logoSource = LOGO_MAP[service as ServiceType] || LOGO_MAP.DeepSeek;
   const icon = <image className='serviceLogo message' src={logoSource} />
 
-  const isUser = sender == "user";
+  const isUser = role == "user";
 
   return (
     <view>
@@ -27,7 +27,7 @@ export function Message({ sender, message }: { sender: string; message: string }
           <view>
             <view className='serviceTitle'>
               {icon}
-              <text className='messageServiceName'> {sender}</text>
+              <text className='messageServiceName'> {service}</text>
             </view>
           <view className='messageBox'>
             <text className='message'> {message}</text>

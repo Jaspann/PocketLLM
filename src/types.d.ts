@@ -1,8 +1,9 @@
 declare global {
   type Message = {
     id: string;
-    text: string;
-    sender: string;
+    service: string;
+    role: string;
+    content: string;
   }
 }
 
