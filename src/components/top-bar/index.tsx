@@ -1,24 +1,23 @@
-import menuIcon from "../../assets/menu.png";
-import settingsIcon from "../../assets/settings.png";
+import menuIcon from '../../assets/menu.png'
+import settingsIcon from '../../assets/settings.png'
 
-import "./styles.css"
+import './styles.css'
 
 interface TopBarProps {
-  onSettingsClick: () => void;
+  onSettingsClick: () => void
 }
 
-export function TopBar( {onSettingsClick}: TopBarProps ) {
-
+export function TopBar({ onSettingsClick }: TopBarProps) {
   return (
     <view>
-      <view className='statusBar' />
-      <view className='menu'>
+      <view className="statusBar" />
+      <view className="menu">
         <view>
-          <image src={menuIcon} className='menuIcon'/>
+          <image src={menuIcon} className="menuIcon" />
         </view>
-        <text className='chatTitle'>Pocket LLM</text>
+        <text className="chatTitle">Pocket LLM</text>
         <view bindtap={onSettingsClick}>
-          <image src={settingsIcon} className='settingsIcon'/>
+          <image src={settingsIcon} className="settingsIcon" />
         </view>
       </view>
     </view>

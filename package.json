@@ -6,20 +6,41 @@
     "build": "rspeedy build",
     "dev": "rspeedy dev",
     "format": "prettier --write .",
-    "preview": "rspeedy preview"
+    "preview": "rspeedy preview",
+    "prettier": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@lynx-js/react": "^0.106.2",
     "react-router": "6"
   },
   "devDependencies": {
+    "@eslint/js": "^9.24.0",
     "@lynx-js/qrcode-rsbuild-plugin": "^0.3.4",
     "@lynx-js/react-rsbuild-plugin": "^0.9.4",
     "@lynx-js/rspeedy": "^0.8.7",
     "@lynx-js/types": "^3.2.0",
     "@types/react": "^18.3.20",
-    "prettier": "^3.5.2",
-    "typescript": "~5.7.3"
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-react": "^7.37.5",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "typescript": "~5.7.3",
+    "typescript-eslint": "^8.29.1"
   },
   "engines": {
     "node": ">=18"
