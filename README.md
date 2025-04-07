@@ -1,21 +1,29 @@
-## Rspeedy project
+# Pocket LLM
 
-This is a ReactLynx project bootstrapped with `create-rspeedy`.
+An LLM wrapper for popular services using [ByteDance's Lynx](https://lynxjs.org/) mobile app framework.
 
-## Getting Started
+## Planned Features
 
-First, install the dependencies:
+- [ ] Ollama support
+- [ ] Save user data (needs to be done through [Native Modules](https://lynxjs.org/guide/use-native-modules.html))
+  - [ ] chats 
+  - [ ] API Keys
+- [ ] Dark mode
 
+As this framework is still very early, there are many bugs and issues currently in this project that are difficult to fix. Feel free to open issues, but be aware Lynx is still does not have all of the mature development features of most other frameworks, which makes it difficult to implement some things.  
+
+## Contributing
+
+Contributions are welcome! We do not implement any custom native modules yet, so the default installation will work.
+
+If you have not developed with Lynx before see [Quick Start With Lynx](https://lynxjs.org/guide/start/quick-start.html)
+
+There are many ways to test the app. I personally use [Expo Orbit](https://expo.dev/orbit), which provides easy management for [Android Studio](https://developer.android.com/studio) emulators. I have only tested on the Pixel 9 Pro. Also, [pnpm](https://pnpm.io/) is used for package management.
+
+To get started:
 ```bash
 pnpm install
-```
-
-Then, run the development server:
-
-```bash
 pnpm run dev
 ```
 
-Scan the QRCode in the terminal with your LynxExplorer App to see the result.
-
-You can start editing the page by modifying `src/App.tsx`. The page auto-updates as you edit the file.
+Then copy the URL into the emulator to start the app.
