@@ -21,6 +21,12 @@ export default defineConfig([
     plugins: { js },
     rules: {
       ...js.configs.recommended.rules,
+      'prettier/prettier': [
+        'error',
+        {
+          endOfLine: 'auto',
+        },
+      ],
     },
   },
   tseslint.configs.recommended,
