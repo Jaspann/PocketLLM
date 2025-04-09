@@ -3,8 +3,8 @@
 An LLM wrapper for popular services using [ByteDance's Lynx](https://lynxjs.org/) mobile app framework.
 
 <p float="left">
-  <img src="./src/assets/model-switching.png" width="225" aspect-ratio="1/2.23" hspace="10">
-  <img src="./src/assets/text-scroll.png" width="225" aspect-ratio="1/2.23" hspace="10">
+  <img src="./src/assets/readme/model-switching.png" width="225" aspect-ratio="1/2.23" hspace="10">
+  <img src="./src/assets/readme/text-scroll.png" width="225" aspect-ratio="1/2.23" hspace="10">
 </p>
 
 ## Planned Features

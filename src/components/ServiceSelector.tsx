@@ -1,7 +1,7 @@
-import OpenAILogo from '../assets/OpenAI.png'
-import AnthropicLogo from '../assets/anthropic.png'
-import GeminiLogo from '../assets/gemini.png'
-import DeepSeekLogo from '../assets/deepseek.png'
+import OpenAILogo from '../assets/services/OpenAI.png'
+import AnthropicLogo from '../assets/services/anthropic.png'
+import GeminiLogo from '../assets/services/gemini.png'
+import DeepSeekLogo from '../assets/services/deepseek.png'
 
 import './ServiceSelector.css'
 
