@@ -2,8 +2,6 @@ import { useCallback, useState } from '@lynx-js/react'
 import { ServiceSelector } from './service-selector/index.jsx'
 import UpArrowImage from '../../assets/upArrow.png'
 
-import './styles.css'
-
 interface TextInputBarProps {
   onSendMessage: (message: string, service: string) => void
 }
@@ -32,28 +30,31 @@ export function Input({ onSendMessage }: TextInputBarProps) {
 
   return (
     <view>
-      <view className="bottomMenu">
-        <view className="inputRow">
-          <view className="inputBox">
+      <view className="fixed bottom-0 left-0 bg-white w-full h-[100px] flex flex-col">
+        <view className="flex flex-row">
+          <view className="w-[85%] bg-gray-200 p-2.5 ml-2.5 mt-2.5 rounded-lg">
             <input
               // @ts-expect-error Lynx has a different input function then what is expected.
               bindinput={handleInputChange}
               type="text"
               value={inputValue}
               placeholder="Ask a question..."
-              className="inputComponent"
+              className="w-full h-full"
             />
           </view>
-          <view className="sendMessage">
+          <view className="bg-[#08e6ff] w-12 h-12 rounded-full ml-2 mt-2 flex items-center justify-center">
             <image
               src={UpArrowImage}
-              className="sendArrow"
+              className="display-icon"
               bindtap={handleSend}
             ></image>
           </view>
         </view>
 
-        <scroll-view scroll-orientation="horizontal" className="serviceScroll">
+        <scroll-view
+          scroll-orientation="horizontal"
+          className="flex flex-row mx-auto w-full flex-1 my-2.5"
+        >
           <ServiceSelector
             service="OpenAI"
             isSelected={selectedService === 'OpenAI'}

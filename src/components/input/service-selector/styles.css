@@ -1,33 +1,17 @@
 .serviceBox {
-  bottom: 0;
-  left: 0;
   background: #eee;
-  width: 110px;
-  height: 30px;
+  width: 112px;
+  height: 32px;
   display: flex;
   flex-direction: row;
   border-radius: 16px;
   align-items: center;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin-right: 4px;
+  margin-left: 4px;
   border: 2px solid #00000000;
 }
 
 .serviceBox.selected {
   background-color: #b4d8ff;
   border: 2px solid #4fa4ff;
-}
-
-.serviceLogo {
-  height: 30px;
-  aspect-ratio: 1/1;
-}
-
-.serviceName {
-  color: #000;
-  flex: 1;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

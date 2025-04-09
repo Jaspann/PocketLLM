@@ -3,7 +3,7 @@ import AnthropicLogo from '../../../assets/anthropic.png'
 import GeminiLogo from '../../../assets/gemini.png'
 import DeepSeekLogo from '../../../assets/deepseek.png'
 
-import './styles.css'
+import '../../../tailwind.css'
 
 type ServiceType = 'OpenAI' | 'Claude' | 'Gemini' | 'DeepSeek'
 
@@ -24,7 +24,11 @@ export function Message({
   message: string
 }) {
   const logoSource = LOGO_MAP[service as ServiceType] || LOGO_MAP.DeepSeek
-  const icon = <image className="serviceLogoMessage" src={logoSource} />
+  const icon = (
+    <view className="m-1 ml-3">
+      <image className="display-icon" src={logoSource} />
+    </view>
+  )
 
   const isUser = role == 'user'
 
@@ -32,18 +36,22 @@ export function Message({
     <view>
       {!isUser && (
         <view>
-          <view className="serviceTitle">
+          <view className="flex flex-row items-center">
             {icon}
-            <text className="messageServiceName"> {service}</text>
+            <text className="text-black flex-1 flex"> {service}</text>
           </view>
-          <view className="messageBox">
-            <text className="message"> {message}</text>
+          <view className="w-full h-auto flex flex-row mx-1">
+            <text className="text-black w-full flex-1 display-flex m-2">
+              {message}
+            </text>
           </view>
         </view>
       )}
       {isUser && (
-        <view className="messageBox user">
-          <text className="message"> {message}</text>
+        <view className="w-full h-auto flex flex-row rounded-2xl mx-1 my-4 bg-gray-200">
+          <text className="text-black w-full flex-1 display-flex m-2">
+            {message}
+          </text>
         </view>
       )}
     </view>

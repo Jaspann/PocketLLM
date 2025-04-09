@@ -2,7 +2,10 @@ import { defineConfig } from '@lynx-js/rspeedy'
 
 import { pluginQRCode } from '@lynx-js/qrcode-rsbuild-plugin'
 import { pluginReactLynx } from '@lynx-js/react-rsbuild-plugin'
-import { pluginTailwindCSS } from 'rsbuild-plugin-tailwindcss'
+// import { pluginTailwindCSS } from 'rsbuild-plugin-tailwindcss'
+
+// The Tailwind plugin currently breaks hot-reloading.
+// Everything seems to work without it for now.
 
 export default defineConfig({
   plugins: [
@@ -13,6 +16,6 @@ export default defineConfig({
       },
     }),
     pluginReactLynx(),
-    pluginTailwindCSS(),
+    // pluginTailwindCSS(),
   ],
 })

@@ -1,7 +1,5 @@
 import { useCallback, useState } from '@lynx-js/react'
 
-import './App.css'
-
 import { TopBar } from './components/top-bar/index.jsx'
 import { Input } from './components/input/index.jsx'
 import { Settings } from './components/settings/index.jsx'
@@ -49,9 +47,9 @@ export function App() {
   }
 
   const home = (
-    <view className="App">
+    <view className="relative min-h-screen flex flex-col items-center justify-center">
       <TopBar onSettingsClick={() => setShowSettings(true)} />
-      <view className="chat-container">
+      <view className="flex flex-1 flex-col w-full p-2">
         <Chat messages={messages} />
         <Input onSendMessage={handleSendMessage} />
       </view>

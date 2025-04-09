@@ -9,7 +9,7 @@ type ChatWindowProps = {
 export function Chat({ messages }: ChatWindowProps) {
   return (
     <view className="messageView">
-      <scroll-view scroll-orientation="vertical" className="messageScroll">
+      <scroll-view scroll-orientation="vertical" className="w-full h-full p-2">
         {messages.map((message, index) => (
           <Message
             key={index}
