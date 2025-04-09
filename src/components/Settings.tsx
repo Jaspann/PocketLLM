@@ -1,5 +1,5 @@
 import { useCallback, useState } from '@lynx-js/react'
-import backArrow from '../../assets/backArrow.png'
+import backArrow from '../assets/backArrow.png'
 
 interface SettingsProps {
   apiKeys: {

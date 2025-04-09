@@ -1,9 +1,9 @@
-import OpenAILogo from '../../../assets/OpenAI.png'
-import AnthropicLogo from '../../../assets/anthropic.png'
-import GeminiLogo from '../../../assets/gemini.png'
-import DeepSeekLogo from '../../../assets/deepseek.png'
+import OpenAILogo from '../assets/OpenAI.png'
+import AnthropicLogo from '../assets/anthropic.png'
+import GeminiLogo from '../assets/gemini.png'
+import DeepSeekLogo from '../assets/deepseek.png'
 
-import './styles.css'
+import './ServiceSelector.css'
 
 type ServiceType = 'OpenAI' | 'Gemini' | 'Claude' | 'DeepSeek'
 

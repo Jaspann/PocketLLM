@@ -1,9 +1,9 @@
 import { useCallback, useState } from '@lynx-js/react'
 
-import { TopBar } from './components/top-bar/index.jsx'
-import { Input } from './components/input/index.jsx'
-import { Settings } from './components/settings/index.jsx'
-import { Chat } from './components/chat/index.jsx'
+import { TopBar } from './components/TopBar.jsx'
+import { Input } from './components/Input.jsx'
+import { Settings } from './components/Settings.jsx'
+import { Chat } from './components/Chat.jsx'
 
 import sendRequest from './utils.js'
 

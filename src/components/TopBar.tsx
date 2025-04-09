@@ -1,5 +1,5 @@
-import menuIcon from '../../assets/menu.png'
-import settingsIcon from '../../assets/settings.png'
+import menuIcon from '../assets/menu.png'
+import settingsIcon from '../assets/settings.png'
 
 interface TopBarProps {
   onSettingsClick: () => void
