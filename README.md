@@ -23,11 +23,11 @@ As this framework is still very early, there are many bugs and issues currently 
 
 ## Contributing
 
-Contributions are welcome! We do not implement any custom native modules yet, so the default installation will work.
+Contributions are welcome! We do not implement any custom native modules yet, so the default Lynx Explorer app will work to run the app.
 
-If you have not developed with Lynx before see [Quick Start With Lynx](https://lynxjs.org/guide/start/quick-start.html)
+If you have not developed with Lynx before see [Quick Start With Lynx](https://lynxjs.org/guide/start/quick-start.html).
 
-There are many ways to test the app. I personally use [Expo Orbit](https://expo.dev/orbit), which provides easy management for [Android Studio](https://developer.android.com/studio) emulators. I have only tested on the Pixel 9 Pro. Also, [pnpm](https://pnpm.io/) is used for package management.
+There are multiple ways to test apps in Lynx. I personally use [Expo Orbit](https://expo.dev/orbit), which provides easy management for [Android Studio](https://developer.android.com/studio) emulators. I have only tested on the Pixel 9 Pro. Also, [pnpm](https://pnpm.io/) is used for package management.
 
 To get started:
 
