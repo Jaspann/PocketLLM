@@ -1,16 +1,9 @@
 import { root } from '@lynx-js/react'
-import { MemoryRouter, Routes, Route } from 'react-router'
 
 import { App } from './App.js'
 import './tailwind.css'
 
-root.render(
-  <MemoryRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-    </Routes>
-  </MemoryRouter>
-)
+root.render(<App />)
 
 if (import.meta.webpackHot) {
   import.meta.webpackHot.accept()

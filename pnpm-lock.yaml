@@ -11,9 +11,6 @@ importers:
       '@lynx-js/react':
         specifier: ^0.106.2
         version: 0.106.2(@lynx-js/types@3.2.1)(@types/react@18.3.20)
-      react-router:
-        specifier: '6'
-        version: 6.30.0(react@19.1.0)
     devDependencies:
       '@eslint/js':
         specifier: ^9.24.0
@@ -350,10 +347,6 @@ packages:
 
   '@polka/url@1.0.0-next.28':
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
-
-  '@remix-run/router@1.23.0':
-    resolution: {integrity: sha512-O3rHJzAQKamUz1fvE0Qaw0xSFqsA/yafi2iqeE0pvdFtCO1viYx8QL6f3Ln/aCCTLxs68SLf0KPM9eSeM8yBnA==}
-    engines: {node: '>=14.0.0'}
 
   '@rsbuild/core@1.2.19':
     resolution: {integrity: sha512-k76is4HygmbYYMLG2V1d1yQeurHHC+ZEtGs/nwE11y6HmwSndoFhmjOeQbQ2Ul0b2B8HErksqSMtlCxd37YPPQ==}
@@ -2497,16 +2490,6 @@ packages:
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
-  react-router@6.30.0:
-    resolution: {integrity: sha512-D3X8FyH9nBcTSHGdEKurK7r8OYE1kKFn3d/CF+CoxbSHkxU7o37+Uh7eAHRXr6k2tSExXYO++07PeXJtA/dEhQ==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      react: '>=16.8'
-
-  react@19.1.0:
-    resolution: {integrity: sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==}
-    engines: {node: '>=0.10.0'}
-
   read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
 
@@ -3420,8 +3403,6 @@ snapshots:
   '@pkgr/core@0.2.1': {}
 
   '@polka/url@1.0.0-next.28': {}
-
-  '@remix-run/router@1.23.0': {}
 
   '@rsbuild/core@1.2.19':
     dependencies:
@@ -5819,13 +5800,6 @@ snapshots:
       unpipe: 1.0.0
 
   react-is@16.13.1: {}
-
-  react-router@6.30.0(react@19.1.0):
-    dependencies:
-      '@remix-run/router': 1.23.0
-      react: 19.1.0
-
-  react@19.1.0: {}
 
   read-cache@1.0.0:
     dependencies:
