@@ -1,8 +1,6 @@
 import { useCallback, useState } from '@lynx-js/react'
 import backArrow from '../../assets/backArrow.png'
 
-import './styles.css'
-
 interface SettingsProps {
   apiKeys: {
     openAi: string
@@ -68,56 +66,57 @@ export function Settings({ apiKeys, onUpdateApiKeys, onBack }: SettingsProps) {
 
   return (
     <view>
-      <view className="statusBar" />
-      <view className="menu">
+      <view className="fixed bg-white w-full h-24 flex flex-row items-center px-2 pt-12">
         <view bindtap={onTapBack}>
-          <image src={backArrow} className="menuIcon" />
+          <image src={backArrow} className="w-8 h-8" />
         </view>
-        <text className="chatTitle">Pocket LLM Settings</text>
+        <text className="flex-1 text-center text-black">
+          Pocket LLM Settings
+        </text>
       </view>
-      <view className="settingsBox">
+      <view className="m-5 mt-28 w-[90%]">
         <text>OpenAI API Key:</text>
-        <view className="inputApiBox">
+        <view className="w-full bg-gray-200 p-2.5 my-2.5 rounded-lg">
           <input
             // @ts-expect-error Lynx has a different input function then what is expected.
             bindinput={handleOpenAiInputChange}
             type="text"
             value={openAiApiKey}
             placeholder="Enter API Key"
-            className="apiInputComponent"
+            className="w-full h-5"
           />
         </view>
         <text>Anthropic API Key:</text>
-        <view className="inputApiBox">
+        <view className="w-full bg-gray-200 p-2.5 my-2.5 rounded-lg">
           <input
             // @ts-expect-error Lynx has a different input function then what is expected.
             bindinput={handleAnthropicInputChange}
             type="text"
             value={anthropicApiKey}
             placeholder="Enter API Key"
-            className="apiInputComponent"
+            className="w-full h-5"
           />
         </view>
         <text>Gemini API Key:</text>
-        <view className="inputApiBox">
+        <view className="w-full bg-gray-200 p-2.5 my-2.5 rounded-lg">
           <input
             // @ts-expect-error Lynx has a different input function then what is expected.
             bindinput={handleGeminiInputChange}
             type="text"
             value={geminiApiKey}
             placeholder="Enter API Key"
-            className="apiInputComponent"
+            className="w-full h-5"
           />
         </view>
         <text>DeepSeek API Key:</text>
-        <view className="inputApiBox">
+        <view className="w-full bg-gray-200 p-2.5 my-2.5 rounded-lg">
           <input
             // @ts-expect-error Lynx has a different input function then what is expected.
             bindinput={handleDeepSeekInputChange}
             type="text"
             value={deepSeekApiKey}
             placeholder="Enter API Key"
-            className="apiInputComponent"
+            className="w-full h-5"
           />
         </view>
       </view>

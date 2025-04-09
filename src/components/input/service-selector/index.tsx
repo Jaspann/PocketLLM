@@ -26,7 +26,7 @@ export function ServiceSelector({
   onSelect,
 }: ServiceSelectorProps) {
   const logoSource = LOGO_MAP[service as ServiceType] || LOGO_MAP.DeepSeek
-  const icon = <image className="serviceLogo" src={logoSource} />
+  const icon = <image className="display-icon" src={logoSource} />
 
   const handleClick = () => {
     onSelect(service)
@@ -36,7 +36,9 @@ export function ServiceSelector({
     <view bindtap={handleClick}>
       <view className={`serviceBox ${isSelected ? 'selected' : ''}`}>
         {icon}
-        <text className="serviceName"> {service}</text>
+        <text className="text-black flex-1 text-center flex justify-center items-center">
+          {service}
+        </text>
       </view>
     </view>
   )

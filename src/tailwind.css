@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.display-icon {
+  height: 32px;
+  aspect-ratio: 1/1;
+}
