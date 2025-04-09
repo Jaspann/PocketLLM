@@ -1,6 +1,6 @@
 import { useCallback, useState } from '@lynx-js/react'
-import { ServiceSelector } from './service-selector/index.jsx'
-import UpArrowImage from '../../assets/upArrow.png'
+import { ServiceSelector } from './ServiceSelector.jsx'
+import UpArrowImage from '../assets/icons/upArrow.png'
 
 interface TextInputBarProps {
   onSendMessage: (message: string, service: string) => void

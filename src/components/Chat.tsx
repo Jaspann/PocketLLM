@@ -1,6 +1,6 @@
-import { Message } from './message/index.jsx'
+import { Message } from './messages/Message.jsx'
 
-import './styles.css'
+import './Chat.css'
 
 type ChatWindowProps = {
   messages: Message[]

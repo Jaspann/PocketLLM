@@ -22,8 +22,7 @@
     ]
   },
   "dependencies": {
-    "@lynx-js/react": "^0.106.2",
-    "react-router": "6"
+    "@lynx-js/react": "^0.106.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.24.0",
