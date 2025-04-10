@@ -12,6 +12,7 @@ An LLM wrapper for popular services using [ByteDance's Lynx](https://lynxjs.org/
 - [ ] Branching Discussion Functionality:
   - [ ] Editing
   - [ ] Re-prompting
+- [ ] Changing models within a service
 - [ ] Streaming Text
 - [ ] Ollama support
 - [ ] Save user data (needs to be done through [Native Modules](https://lynxjs.org/guide/use-native-modules.html))
